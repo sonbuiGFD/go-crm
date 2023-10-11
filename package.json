@@ -59,7 +59,7 @@
     "test": "craco test",
     "eject": "react-scripts eject",
     "analyze": "source-map-explorer 'build/static/js/*.js'",
-    "deploy-dev": "npm run build && netlify deploy --prod"
+    "deploy": "npm run build && netlify deploy --prod"
   },
   "eslintConfig": {
     "extends": [
