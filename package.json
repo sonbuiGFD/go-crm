@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "@ant-design/icons": "^5.2.6",
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
     "@reduxjs/toolkit": "^1.9.7",
     "@sentry/react": "^6.19.7",
     "@sentry/tracing": "^6.19.7",
@@ -54,10 +55,11 @@
   },
   "scripts": {
     "dev": "env-cmd -f .env.development craco start",
-    "build": "env-cmd -f .env.production craco build",
+    "build": "env-cmd -f .env.production craco build && cp build/index.html build/404.html",
     "test": "craco test",
     "eject": "react-scripts eject",
-    "analyze": "source-map-explorer 'build/static/js/*.js'"
+    "analyze": "source-map-explorer 'build/static/js/*.js'",
+    "deploy-dev": "npm run build && netlify deploy --prod"
   },
   "eslintConfig": {
     "extends": [
