@@ -30,11 +30,11 @@ const FlashScreen = ({ isAuthened }: any) => {
           <div className="flash_screen__des animate__animated animate__fadeIn animate__slower">
             <p>
               <span className="d-block"> Powered By</span>
-              <span className="d-block">Fastboy Marketing</span>
+              <span className="d-block">Go Ahead</span>
             </p>
             <p>
               <span className="d-block">Copyright © 2023-2024</span>
-              <span className="d-block">Go Ahead Inc. </span>
+              <span className="d-block">Go Ahead </span>
               <span className="d-block">All rights reserved</span>
             </p>
 
