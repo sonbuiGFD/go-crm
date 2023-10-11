@@ -1,0 +1,199 @@
+// CSS CALCULATE UNIT MIXINS
+
+@function rem($px, $base: $font_size_rem) {
+  @if (unitless($px)) {
+    $px: $px * 1px;
+  }
+
+  @if (unitless($base)) {
+    $base: $base * 1px;
+  }
+
+  @return ($px / $base) * 1rem;
+}
+
+@function em($px, $base: $font_size) {
+  @if (unitless($px)) {
+    $px: $px * 1px;
+  }
+
+  @if (unitless($base)) {
+    $base: $base * 1px;
+  }
+  @return ($px / $base) * 1em;
+}
+
+@mixin bg-classes($name, $color) {
+  .bg-#{$name} {
+    background: $color;
+  }
+}
+
+@mixin color-classes($name, $color) {
+  .color-#{$name} {
+    color: $color;
+  }
+}
+
+@mixin classes-ultils($colors) {
+  @each $key, $color in $colors {
+    @include color-classes($key, $color);
+    @include bg-classes($key, $color);
+  }
+}
+
+// MEDIA QUERY MIXINS
+
+// query xs
+@mixin min-xs {
+  @media (min-width: #{$screen-xs}) {
+    @content;
+  }
+}
+
+@mixin max-xs {
+  @media (max-width: #{$screen-xs - 1px}) {
+    @content;
+  }
+}
+
+// query sm
+@mixin min-sm {
+  @media (min-width: #{$screen-sm}) {
+    @content;
+  }
+}
+
+@mixin max-sm {
+  @media (max-width: #{$screen-sm - 1px}) {
+    @content;
+  }
+}
+
+// query md
+
+@mixin max-md {
+  @media (max-width: #{$screen-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin min-md {
+  @media (min-width: #{$screen-md}) {
+    @content;
+  }
+}
+
+// query lg
+
+@mixin max-lg {
+  @media (max-width: #{$screen-lg - 1px}) {
+    @content;
+  }
+}
+
+@mixin min-lg {
+  @media (min-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+// query ml
+
+@mixin max-ml {
+  @media (max-width: #{$screen-ml - 1px}) {
+    @content;
+  }
+}
+
+@mixin min-ml {
+  @media (min-width: #{$screen-ml}) {
+    @content;
+  }
+}
+
+// query xl
+
+@mixin max-xl {
+  @media (max-width: #{$screen-xl - 1px}) {
+    @content;
+  }
+}
+
+@mixin min-xl {
+  @media (min-width: #{$screen-xl}) {
+    @content;
+  }
+}
+
+// query xxl
+
+@mixin max-xxl {
+  @media (max-width: #{$screen-xxl - 1px}) {
+    @content;
+  }
+}
+
+@mixin min-xxl {
+  @media (min-width: #{$screen-xxl}) {
+    @content;
+  }
+}
+
+// md to lg and md to ml
+
+@mixin md-to-lg {
+  @media (min-width: #{$screen-md}) and (max-width: #{$screen-lg}) {
+    @content;
+  }
+}
+
+@mixin md-to-ml {
+  @media (min-width: #{$screen-md}) and (max-width: #{$screen-ml}) {
+    @content;
+  }
+}
+
+// lg to ml
+
+@mixin lg-to-ml {
+  @media (min-width: #{$screen-lg}) and (max-width: #{$screen-ml}) {
+    @content;
+  }
+}
+
+// dynamic media query
+
+@mixin min-size($size) {
+  @media (min-width: #{$size}) {
+    @content;
+  }
+}
+
+@mixin max-size($size) {
+  @media (max-width: #{$size}) {
+    @content;
+  }
+}
+
+// RESPONSIVE
+
+@function breakpoint-infix($name, $breakpoints: $grid-breakpoints) {
+  @return if(breakpoint-min($name, $breakpoints) == null, '', '-#{$name}');
+}
+
+@mixin media-breakpoint-up($name, $breakpoints: $grid-breakpoints) {
+  $min: breakpoint-min($name, $breakpoints);
+  @if $min {
+    @media (min-width: $min) {
+      @content;
+    }
+  } @else {
+    @content;
+  }
+}
+
+@function breakpoint-min($name, $breakpoints: $grid-breakpoints) {
+  $min: map-get($breakpoints, $name);
+  @return if($min != 0, $min, null);
+}

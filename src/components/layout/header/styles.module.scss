@@ -1,0 +1,244 @@
+@import 'styles/vars.scss';
+
+.header {
+  border-bottom: 1px solid $border;
+  background: $white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 24px;
+  position: relative;
+  z-index: 20;
+
+  &__lang {
+    position: relative;
+    .lang {
+      &__btn {
+        display: flex;
+        align-items: center;
+      }
+
+      &__globe {
+        margin-right: 8px;
+      }
+      &__selected {
+        margin-right: 8px;
+      }
+
+      &__dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding-top: 12px;
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+        transform: translateY(10px);
+        transition: all ease-in-out 0.3s;
+        &.show {
+          opacity: 1;
+          visibility: visible;
+          z-index: 1;
+          transform: translateY(0);
+        }
+      }
+
+      &__content {
+        background: $white;
+        border-radius: 4px;
+        width: 100px;
+        padding: 12px;
+        box-shadow: 0px 9px 28px 8px rgba(0, 0, 0, 0.05), 0px 6px 16px rgba(0, 0, 0, 0.08),
+          0px 3px 6px -4px rgba(0, 0, 0, 0.12);
+      }
+
+      &__item {
+        display: block;
+        font-size: 14px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        width: 100%;
+        text-align: left;
+        &:not(:last-child) {
+          border-bottom: 1px solid $border;
+        }
+        &:hover,
+        &.active {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &__noti {
+    display: inline-block;
+  }
+
+  &__credit {
+    display: inline-flex;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 700;
+    white-space: nowrap;
+  }
+
+  &__login {
+    display: inline-block;
+    align-items: center;
+    font-size: 16px;
+    font-weight: 600;
+    white-space: nowrap;
+    padding: 12px;
+    border-radius: 4px;
+    background: $primary;
+    min-width: 80px;
+    color: $white;
+  }
+
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+  &__profile {
+    display: inline-block;
+    margin-left: 24px;
+    position: relative;
+
+    .profile {
+      &__img {
+        width: 44px;
+        height: 44px;
+        border-radius: 100%;
+        // background: $gray;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+        position: relative;
+        margin-right: 8px;
+        border-radius: 100%;
+        border: 2px solid $white;
+
+        &.pro {
+          border: 2px solid $primary;
+        }
+        .img {
+          border-radius: 100%;
+        }
+      }
+
+      &__medal {
+        position: absolute;
+        bottom: -16px;
+        right: -10px;
+      }
+
+      &__btn {
+        align-items: center;
+        display: flex;
+      }
+
+      &__dropdown {
+        position: absolute;
+        top: 100%;
+        right: 0;
+        padding-top: 12px;
+        opacity: 0;
+        visibility: hidden;
+        z-index: -1;
+        transform: translateY(10px);
+        transition: all ease-in-out 0.3s;
+
+        &.show {
+          opacity: 1;
+          visibility: visible;
+          z-index: 1;
+          transform: translateY(0);
+        }
+      }
+
+      &__content {
+        background: $white;
+        border-radius: 4px;
+        width: 100px;
+        padding: 12px;
+        box-shadow: 0px 9px 28px 8px rgba(0, 0, 0, 0.05), 0px 6px 16px rgba(0, 0, 0, 0.08),
+          0px 3px 6px -4px rgba(0, 0, 0, 0.12);
+      }
+
+      &__item {
+        display: block;
+        font-size: 14px;
+        padding-top: 8px;
+        padding-bottom: 8px;
+        width: 100%;
+        text-align: left;
+        &:not(:last-child) {
+          border-bottom: 1px solid $border;
+        }
+        &:hover,
+        &.active {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &__left {
+    display: flex;
+
+    align-items: center;
+  }
+
+  &__mobi {
+    display: none;
+    margin-right: 12px;
+  }
+
+  &__sd {
+    display: flex;
+    align-items: center;
+    margin-right: 12px;
+  }
+
+  &__toggle {
+    width: 48px;
+    font-size: 16px;
+    color: $gray-10 !important;
+  }
+
+  @include max-size(1168px) {
+    padding: 6px 4px;
+    &__mobi {
+      display: flex;
+    }
+  }
+
+  @include max-sm {
+    &__lang {
+      .lang {
+        &__globe {
+          display: none;
+        }
+      }
+    }
+
+    &__sd {
+      display: none;
+    }
+
+    &__profile {
+      margin-left: 12px;
+    }
+  }
+}
+
+.timer {
+  display: flex;
+  font-size: 16px;
+
+  &__dash {
+    margin-left: 4px;
+    margin-right: 4px;
+  }
+}

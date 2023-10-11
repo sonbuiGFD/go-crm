@@ -1,0 +1,144 @@
+@import 'styles/vars.scss';
+
+.invoice {
+  &__page {
+    margin-top: 20px;
+    border-radius: 4px;
+    font-size: 14px;
+    color: $black;
+    padding: 0 15px;
+  }
+
+  &__modal_confirm {
+    .ant-modal-close {
+      display: none;
+    }
+
+    .ant-modal-footer {
+      border-top: none;
+      padding-bottom: 24px;
+    }
+
+    .modal_confirm {
+      &__body {
+        display: flex;
+      }
+
+      &__icon {
+        margin-right: 10px;
+        font-size: 21px;
+      }
+
+      &__content {
+        width: 100%;
+      }
+
+      &__title {
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        color: #262626;
+        margin-bottom: 8px;
+      }
+
+      &__text {
+        font-size: 14px;
+        line-height: 22px;
+        color: #595959;
+        margin-bottom: 16px;
+      }
+
+      &__rules {
+        margin-bottom: 16px;
+      }
+
+      &.success {
+        .modal_confirm__icon {
+          color: $success;
+        }
+      }
+
+      &.error {
+        .modal_confirm__icon {
+          color: $danger;
+        }
+      }
+
+      &.warmming {
+        .modal_confirm__icon {
+          color: $warning;
+        }
+      }
+
+      &.info {
+        .modal_confirm__icon {
+          color: $primary;
+        }
+      }
+    }
+  }
+
+  &__delivery {
+    color: $black;
+
+    .custom__select {
+      .MuiInputLabel-formControl,
+      .MuiInput-formControl,
+      .MuiSelect-select,
+      .MuiInput-input {
+        color: $black !important;
+      }
+    }
+
+    .select__item {
+      .MuiInput-input {
+        color: $black !important;
+      }
+    }
+
+    .CardWrapper {
+      &__content {
+        border-radius: 4px;
+      }
+
+      &__icon {
+        display: none;
+      }
+
+      &__header {
+        border-bottom: 1px solid #ebebf0;
+        margin-left: 0;
+        margin-right: 0;
+        padding-left: 20px;
+        padding-right: 20px;
+        padding-bottom: 5px;
+      }
+    }
+  }
+}
+
+.cancel_quotation {
+  .MuiFormLabel-root,
+  .MuiSvgIcon-root,
+  .MuiSelect-root,
+  .MuiInput-input {
+    color: $black !important;
+  }
+
+  .MuiInputBase-root {
+    color: $black !important;
+  }
+}
+
+.tooltip {
+  &__invoice {
+    display: block;
+  }
+  &__top {
+    color: $white;
+    display: block;
+  }
+  &__text {
+    color: #f5f5f5;
+  }
+}

@@ -1,0 +1,170 @@
+@import 'styles/vars.scss';
+
+.invoices {
+  &__page {
+    color: $black-100;
+    font-size: 14px;
+  }
+
+  &__body {
+    background: #f5f5f5;
+    padding: 30px;
+  }
+
+  &__pagination {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+  }
+
+  &__table {
+    .ant-table-sticky-scroll {
+      opacity: 1;
+      .ant-table-sticky-scroll-bar {
+        background: rgba(0, 0, 0, 0.8);
+      }
+    }
+
+    .invoice__status {
+      white-space: normal;
+    }
+
+    .invoice__link {
+      display: flex;
+      color: $black-100;
+      align-items: center;
+      margin-bottom: 3px;
+      span {
+        color: #1890ff;
+        margin-bottom: -5px;
+        margin-left: 5px;
+      }
+    }
+
+    .invoice__detail {
+      .item + .item {
+        margin-top: 5px;
+      }
+
+      .isOverDue {
+        color: $danger;
+      }
+
+      .paid {
+        color: $success;
+      }
+
+      .item {
+        display: flex;
+        align-items: center;
+        .icon {
+          margin-right: 5px;
+        }
+      }
+
+      .hide {
+        display: none;
+      }
+
+      .time {
+        font-weight: bold;
+      }
+    }
+
+    .ant-table-tbody {
+      .ant-table-cell {
+        padding: 24px 16px;
+      }
+    }
+
+    .ant-table-thead {
+      .text-end {
+        text-align: right;
+      }
+      .text-center {
+        text-align: center;
+      }
+
+      .ant-table-column-sorters {
+        width: 100%;
+      }
+    }
+
+    .table {
+      &__alert {
+        margin-bottom: 20px;
+      }
+
+      &__body {
+        .ant-table-thead {
+          .ant-table-cell {
+            font-weight: bold;
+            color: #696969;
+          }
+        }
+      }
+
+      &__header {
+        margin-bottom: 20px;
+        display: flex;
+        justify-content: space-between;
+      }
+
+      &__control {
+        margin-left: 10px;
+      }
+
+      &__footer {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 20px;
+      }
+
+      &__limit {
+        width: 150px;
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+
+      &__action {
+        display: flex;
+        align-items: center;
+        .divider {
+          color: $gray;
+        }
+      }
+
+      &__vat {
+        padding-top: 8px;
+        padding-left: 8px;
+        padding-right: 8px;
+        padding-bottom: 8px;
+        border-top: 1px solid #f0f0f0;
+        margin-left: -8px;
+        margin-right: -8px;
+        &:first-child {
+          border-top: none;
+          padding-top: 0;
+        }
+
+        &:last-child {
+          padding-bottom: 0;
+        }
+      }
+    }
+  }
+}
+
+.tooltip {
+  &__invoice {
+    display: block;
+  }
+  &__top {
+    color: $white;
+    display: block;
+  }
+  &__text {
+    color: #f5f5f5;
+  }
+}

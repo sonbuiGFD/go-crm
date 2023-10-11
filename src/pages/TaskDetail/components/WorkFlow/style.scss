@@ -1,0 +1,167 @@
+@import 'styles/vars.scss';
+
+.invoice_status {
+  &__top {
+    margin-bottom: 40px;
+
+    .title {
+      display: flex;
+      align-items: center;
+      margin-bottom: 4px;
+    }
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 28px;
+    color: $black;
+    display: inline-block;
+    margin-right: 16px;
+  }
+  &__type {
+    color: #8c8c8c;
+  }
+
+  &__content {
+    display: flex;
+    padding-bottom: 30px;
+  }
+
+  &__item {
+    width: 100%;
+    text-align: center;
+    position: relative;
+
+    &::before,
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      height: 2px;
+      background: #e8e8e8;
+      width: 50%;
+      z-index: 1;
+    }
+
+    &.checked {
+      &::before,
+      &::after {
+        display: block;
+        background: #1890ff;
+      }
+
+      .item__icon {
+        display: block;
+      }
+
+      .item__des {
+        display: block;
+      }
+    }
+
+    &::before {
+      left: 0;
+    }
+
+    &::after {
+      right: 0;
+    }
+
+    &.Pending {
+      &::before {
+        display: none;
+      }
+      .item__des {
+        display: inline-block;
+        max-width: 250px;
+        width: 100%;
+      }
+    }
+
+    &.Paid {
+      &::after {
+        display: none;
+      }
+    }
+
+    &.Approved {
+      &.notPaid {
+        &::after {
+          background: #e8e8e8;
+        }
+      }
+    }
+
+    &.Declined {
+      .item {
+        &__icon {
+          color: #fa8c16;
+        }
+
+        &__name {
+          color: #fa8c16;
+        }
+      }
+
+      .item__des {
+        display: inline-block;
+        max-width: 300px;
+        width: 100%;
+      }
+    }
+
+    .item {
+      &__content {
+        padding-top: 16px;
+      }
+      &__icon {
+        display: none;
+        color: $primary;
+        position: absolute;
+        left: 50%;
+        top: -20px;
+        margin-left: -17px;
+        z-index: 2;
+        width: 34px;
+        height: 34px;
+        border: 10px solid $white;
+        background: $white;
+        border-radius: 100%;
+        z-index: 3;
+        &.show {
+          display: block;
+        }
+      }
+
+      &__dot {
+        width: 26px;
+        height: 26px;
+        border: 10px solid $white;
+        border-radius: 100%;
+        background: #bfbfbf;
+        position: absolute;
+        left: 50%;
+        margin-left: -13px;
+        top: -13px;
+        z-index: 2;
+      }
+
+      &__name {
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 22px;
+        color: #595959;
+        margin-bottom: 5px;
+      }
+
+      &__des {
+        font-size: 14px;
+        line-height: 22px;
+        text-align: center;
+        color: #8c8c8c;
+        display: none;
+      }
+    }
+  }
+}

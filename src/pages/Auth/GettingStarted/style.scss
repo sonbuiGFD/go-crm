@@ -1,0 +1,92 @@
+@import 'styles/vars.scss';
+
+.started {
+  &__page {
+    min-height: 100vh;
+    width: 100%;
+    position: relative;
+    background: $white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    overflow: hidden;
+  }
+
+  &__overlay {
+    position: absolute;
+    top: 0;
+    left: -120px;
+    bottom: 0;
+    width: 45%;
+    z-index: 1;
+    background: #abc4ff;
+    transform: skew(-10deg, 0deg);
+  }
+
+  &__container {
+    z-index: 2;
+    position: relative;
+    display: flex;
+    align-items: center;
+  }
+
+  &__right {
+    padding-left: 160px;
+    padding-right: 160px;
+  }
+
+  &__form {
+    width: 466px;
+  }
+
+  &__logo {
+    margin-bottom: 15px;
+  }
+
+  &__name {
+    margin-top: 10px;
+  }
+
+  &__title {
+    text-align: center;
+    font-weight: 600;
+    font-size: 32px;
+    color: $black;
+    margin-bottom: 15px;
+  }
+
+  &__sub {
+    text-align: center;
+    font-weight: 600;
+    font-size: 24px;
+    color: $black;
+    margin-bottom: 42px;
+  }
+
+  &__input {
+    height: 52px;
+    border-radius: 12px;
+    padding-left: 18px;
+    padding-right: 18px;
+    margin-bottom: 42px;
+
+    .ant-input-prefix {
+      color: #8a8a8a;
+    }
+
+    .ant-input {
+      padding-left: 10px !important;
+      font-weight: 400;
+      font-size: 20px;
+      color: #8a8a8a;
+    }
+  }
+
+  &__cta {
+    height: 64px;
+    border-radius: 12px;
+    font-weight: 600;
+    font-size: 22px;
+  }
+}

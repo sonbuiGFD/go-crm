@@ -1,0 +1,52 @@
+@import 'styles/vars.scss';
+
+.flash_screen {
+  background: $white;
+  width: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+
+  &__container {
+    display: flex;
+  }
+
+  &__right {
+    border-radius: 17.5883px;
+    background: #f1eff1;
+    padding-top: 85px;
+    padding-bottom: 40px;
+    padding-top: 40px;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__left {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 45px;
+    padding-right: 80px;
+  }
+
+  &__logo {
+    margin-bottom: 100px;
+    text-align: center;
+  }
+
+  &__des {
+    font-weight: 600;
+    font-size: 17px;
+    color: $gray_2;
+
+    p {
+      margin-bottom: 35px;
+    }
+  }
+}
