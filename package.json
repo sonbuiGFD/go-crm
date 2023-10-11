@@ -54,7 +54,7 @@
   },
   "scripts": {
     "dev": "env-cmd -f .env.development craco start",
-    "build": "env-cmd -f .env.production craco build && cp build/index.html build/404.html",
+    "build": "env-cmd -f .env.production craco build",
     "test": "craco test",
     "eject": "react-scripts eject",
     "analyze": "source-map-explorer 'build/static/js/*.js'"
